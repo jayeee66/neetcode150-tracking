@@ -2,16 +2,16 @@
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         # Build hash map to store count
-        # Build bucket array where the index is the frequency and the value is the list of numbers with that frequency
-        # Iterate the bucket array from the end and append the numbers to the result until the size of the result is k
         count = {}
         for num in nums:
             count[num] = 1 + count.get(num, 0)
-
+            
+        # Build bucket array where the index is the frequency and the value is the list of numbers with that frequency
         bucket = [[] for _ in range(len(nums) + 1)]
         for num, cnt in count.items():
             bucket[cnt].append(num)
 
+        # Iterate the bucket array from the end and append the numbers to the result until the size of the result is k
         res = []
         for i in range(len(bucket) - 1, -1, -1):
             for num in bucket[i]:
