@@ -6,7 +6,7 @@ class Solution:
         # longest streak default 0
         longest = 0
         for num in num_set:
-            # Find the beginning number and keep changing
+            # Find the beginning number, if I find it, start the loop
             if num - 1 not in num_set:
                 curr = num
                 # print(first)
