@@ -1,7 +1,6 @@
-
+# Floyd Cycle
 class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
-        # Floyd Cycle
         fast = 0
         slow = 0
         # Finding the intersection point in the cycle
